@@ -28,4 +28,9 @@ config:
   install-commands:
   - install -Dm755 runsc "%{install-root}%{bindir}/runsc"
   - install -Dm755 containerd-shim-runsc-v1 "%{install-root}%{bindir}/containerd-shim-runsc-v1"
+  # runsc execs its sidecars from gvisor-bin/ next to itself.
+  - |
+    for f in gvisor-bin/*; do
+      install -Dm755 "$f" "%{install-root}%{bindir}/$f"
+    done
   - install -Dm644 LICENSE "%{install-root}%{datadir}/licenses/gvisor/LICENSE"
