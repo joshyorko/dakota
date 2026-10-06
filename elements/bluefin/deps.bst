@@ -77,6 +77,7 @@ depends:
   - freedesktop-sdk.bst:components/flatpak-builder.bst
   # projectbluefin/contribute needs userspace ext filesystem inspection.
   - freedesktop-sdk.bst:components/e2fsprogs.bst
+  - bluefin/fuse2fs.bst
   - bluefin/libkrun.bst
   - bluefin/libkrunfw.bst
   - bluefin/crun-krun.bst
