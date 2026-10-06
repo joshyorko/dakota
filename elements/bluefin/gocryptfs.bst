@@ -77,6 +77,8 @@ sources:
     go-version: v0.29.0
     git-ref: 743b2709ab25357d30ce1eac4a840eb0b7deb1bf
     explicit: true
+- kind: local
+  path: files/gocryptfs/modules.txt
 
 build-depends:
 - freedesktop-sdk.bst:components/go.bst
@@ -87,6 +89,8 @@ depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 environment:
+  GOROOT: "%{libdir}/go"
+  GOARCH: "%{go-arch}"
   GOTOOLCHAIN: local
   GOPROXY: off
   GOFLAGS: -trimpath -buildvcs=false
@@ -97,6 +101,7 @@ variables:
 
 config:
   build-commands:
+  - mv -vf modules.txt vendor/modules.txt
   - CGO_ENABLED=0 go build -mod=vendor -tags without_openssl -ldflags="-X main.GitVersion=v2.6.1 -X main.GitVersionFuse=v2.8.0 -X main.BuildDate=2025-08-10" -o gocryptfs .
   - CGO_ENABLED=0 go build -mod=vendor -ldflags="-X main.GitVersion=v2.6.1 -X main.BuildDate=2025-08-10" -o gocryptfs-xray/gocryptfs-xray ./gocryptfs-xray
   install-commands:

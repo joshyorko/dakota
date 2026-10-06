@@ -81,6 +81,7 @@ depends:
   - bluefin/libkrunfw.bst
   - bluefin/crun-krun.bst
   - bluefin/gocryptfs.bst
+  - bluefin/gvisor.bst
 
   - freedesktop-sdk.bst:components/bpf-maybe.bst
   - gnome-build-meta.bst:gnomeos-deps/bpftop.bst
