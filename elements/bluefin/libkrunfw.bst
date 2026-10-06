@@ -4,6 +4,7 @@ description: |
 
 sources:
 - kind: tar
+  base-dir: ''
   (?):
   - arch == "x86_64":
       url: github-releases:libkrun/libkrunfw/releases/download/v5.6.1/libkrunfw-x86_64.tgz

@@ -81,6 +81,7 @@ sources:
   path: files/gocryptfs/modules.txt
 
 build-depends:
+- core/sandbox-tools.bst
 - freedesktop-sdk.bst:components/go.bst
 - freedesktop-sdk.bst:components/fuse3.bst
 

@@ -750,6 +750,7 @@ build-depends:
 - freedesktop-sdk.bst:components/curl.bst
 - freedesktop-sdk.bst:components/libcap-ng.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
+- freedesktop-sdk.bst:components/pkg-config.bst
 
 depends:
 - bluefin/libkrunfw.bst
@@ -760,6 +761,6 @@ variables:
 
 config:
   build-commands:
-  - make BLK=1 NET=1 SND=1
+  - make BLK=1 NET=1
   install-commands:
-  - make PREFIX="%{prefix}" LIBDIR_Linux="$(basename '%{libdir}')" DESTDIR="%{install-root}" install
+  - make PREFIX="%{prefix}" LIBDIR_Linux="$(realpath -m --relative-to='%{prefix}' '%{libdir}')" DESTDIR="%{install-root}" install
