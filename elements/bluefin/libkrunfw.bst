@@ -12,6 +12,9 @@ sources:
       url: github-releases:libkrun/libkrunfw/releases/download/v5.6.1/libkrunfw-aarch64.tgz
       ref: afe8c9ffc5b4a2290ad4dd6df27605ef97b074151174a1f83e738354cdd66d95
 
+build-depends:
+- core/sandbox-tools.bst
+
 variables:
   strip-binaries: ''
 

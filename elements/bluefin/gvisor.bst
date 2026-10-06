@@ -18,6 +18,9 @@ sources:
   ref: 0fbab5c58efbdf6d31e8085214f2dd821659c03d73cff3ed2b08e98826ea1cd9
   filename: LICENSE
 
+build-depends:
+- core/sandbox-tools.bst
+
 variables:
   strip-binaries: ''
 
